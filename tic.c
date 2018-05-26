@@ -11,8 +11,7 @@ void main(){
 	for(i = 0; i < rows; i++)//fills array with spaces
 		for(j = 0; j < columns; j++)
 			board[i][j] = ' ';
-
-    int pos; char val;
+        int pos; char val;
 	for(i = 0; ;i++){
         if(i%2 == 0)
             val = 'X';
