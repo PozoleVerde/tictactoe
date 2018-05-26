@@ -6,21 +6,20 @@ void displayBoard(char arr[rows][columns]);
 int isDuplicate(char arr[rows][columns], int pos, char val);
 int positionToRow(int pos);
 void main(){
-	char board[rows][columns];
-	int i, j;
+    char board[rows][columns];
+    int i, j;
 	for(i = 0; i < rows; i++)//fills array with spaces
 		for(j = 0; j < columns; j++)
 			board[i][j] = ' ';
-        int pos; char val;
-	for(i = 0; ;i++){
-        if(i%2 == 0)
+    int pos; char val;
+    for(i = 0; ;i++){
+        if(i % 2 == 0)
             val = 'X';
         else
             val = 'O';
         printf("\nCurrent Standings:\n\n");
         displayBoard(board);
-        printf("\nCurrent Player: X\n");
-        printf("\tEnter Position: ");
+        printf("\nCurrent Player: X\n\tEnter Position: ");
         scanf("%d", &pos);
         if(!isDuplicate(board, pos, 'O') && !isDuplicate(board, pos, 'X'))
             board[positionToRow(pos)][pos - positionToRow(pos) * 3 - 1] = val;
